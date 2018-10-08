@@ -14,14 +14,16 @@ public class Employee {
 
     private String name;
     private double salary;
-    private static int employeeID = 1;
+    private int employeeID;
+    private static int numberOfEmployees = 0;
 
 
     public Employee(String name, double salary){
 
         this.name = name;
         this.salary = salary;
-        int employeeID = this.employeeID++;
+        int employeeID = this.numberOfEmployees;
+        numberOfEmployees++;
 
     }
 
