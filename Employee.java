@@ -22,7 +22,7 @@ public class Employee {
 
         this.name = name;
         this.salary = salary;
-        int employeeID = this.numberOfEmployees;
+        int employeeID = numberOfEmployees;
         numberOfEmployees++;
 
     }
