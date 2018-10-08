@@ -30,18 +30,18 @@ public class CompanyStructure {
 
     public static void main(String[] args){
 
-        Employee employee1 = new Employee("Ryan", 31000);
-        Employee employee2 = new Employee("Ryan", 31000);
-        Employee employee3 = new Employee("Ryan", 31000);
-        Employee employee4 = new Employee("Ryan", 31000);
-        Employee employee5 = new Employee("Ryan", 31000);
-
+        Employee employee1 = new TechnicalEmployee("Ryan");
+        Employee employee2 = new TechnicalEmployee("Carmen");
+        Employee employee3 = new TechnicalEmployee("Bella");
+        Employee employee4 = new TechnicalEmployee("Brandon");
+        Employee employee5 = new TechnicalEmployee("Jen");
 
         System.out.println(employee1.getName());
         System.out.println("$" + employee1.getBaseSalary());
-        System.out.println(employee1.getEmployeeID());
-        System.out.println(employee3.getEmployeeID());
-        System.out.println(employee5.getEmployeeID());
+        System.out.println(employee1.equals(employee1));
+        System.out.println(employee2.toString());
+        System.out.println(employee3.equals(employee4));
+        System.out.println(employee5.toString());
 
 
 

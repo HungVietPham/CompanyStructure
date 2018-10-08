@@ -5,12 +5,13 @@ package com.github.khardrix.companyStructure;
  *******************************************************************************************
  *****                                 *| Employee |*                                  *****
  *****---------------------------------------------------------------------------------*****
+ *****                             Unfinished Methods: 2                               *****
  *******************************************************************************************
  ******************************************************************************************/
 
 
 
-public class Employee {
+public abstract class Employee {
 
     private String name;
     private double salary;
@@ -44,6 +45,24 @@ public class Employee {
         return this.employeeID;
     }
 
+    // NOT FINISHED!!!!!!!
+   // public Employee getManager(){
 
-    
+   //     return
+    //}
+
+
+    public boolean equals(Employee other){
+
+        return (this.employeeID == other.employeeID);
+    }
+
+
+    public String toString(){
+
+        return employeeID + " " + name;
+    }
+
+    // NOT FINISHED YET!!!!!!!
+    abstract String employeeStatus();
 }
