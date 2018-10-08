@@ -22,9 +22,8 @@ public class Employee {
 
         this.name = name;
         this.salary = salary;
-        int employeeID = numberOfEmployees;
         numberOfEmployees++;
-
+        employeeID = numberOfEmployees;
     }
 
 
@@ -42,6 +41,9 @@ public class Employee {
 
     public int getEmployeeID(){
 
-        return employeeID;
+        return this.employeeID;
     }
+
+
+    
 }
