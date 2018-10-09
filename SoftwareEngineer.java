@@ -10,27 +10,27 @@ package com.github.khardrix.companyStructure;
 
 public class SoftwareEngineer extends TechnicalEmployee{
 
-    private boolean hasCodeAccess;
+    private boolean codeAccess;
     private int checkins;
 
 
     public SoftwareEngineer(String name){
 
         super(name);
-        hasCodeAccess = false;
+        codeAccess = false;
         checkins = 0;
     }
 
 
     public boolean getCodeAccess(){
 
-        return hasCodeAccess;
+        return codeAccess;
     }
 
 
     public void setCodeAccess(boolean access){
 
-        hasCodeAccess = access;
+        codeAccess = access;
     }
 
 
