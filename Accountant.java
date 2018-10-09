@@ -8,13 +8,13 @@ package com.github.khardrix.companyStructure;
  *******************************************************************************************
  ******************************************************************************************/
 
-public class Accountant {
+public class Accountant extends BusinessEmployee{
 
     private String supportedTeam;
 
-    // ERROR IN CONSTRUCTOR! NEED TO FIGURE OUT WHY!!!!!!!
-   // public Accountant(String name){
 
-       // super(name);
-   // }
+    public Accountant(String name){
+
+        super(name);
+    }
 }
