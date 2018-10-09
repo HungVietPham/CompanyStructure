@@ -4,15 +4,11 @@ package com.github.khardrix.companyStructure;
  *******************************************************************************************
  *****                            *| TechnicalEmployee |*                              *****
  *****---------------------------------------------------------------------------------*****
- *****                             Unfinished Methods: 1                               *****
+ *****                             UNFINISHED METHODS: 1                               *****
  *******************************************************************************************
  ******************************************************************************************/
 
-
 public class TechnicalEmployee extends Employee{
-
-    // DUPLICATE FROM CLASS: Employee
-    private String name;
 
 
     public TechnicalEmployee(String name){
@@ -20,9 +16,10 @@ public class TechnicalEmployee extends Employee{
         super(name, 75000);
     }
 
-    // NOT FINISHED YET!!!!!!!
+    // NOT FINISHED!!!!!!!
     public String employeeStatus(){
 
-        return "";
+        return super.toString() + " has //THIS NUMBER WILL BE FILLED IN " +
+                "BY ANOTHER METHOD IN ANOTHER CLASS// successful check ins";
     }
 }

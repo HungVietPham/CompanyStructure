@@ -35,6 +35,8 @@ public class CompanyStructure {
         Employee employee3 = new TechnicalEmployee("Bella");
         Employee employee4 = new TechnicalEmployee("Brandon");
         Employee employee5 = new TechnicalEmployee("Jen");
+        Employee employee6 = new BusinessEmployee("Bandit");
+        TechnicalEmployee employee7 = new SoftwareEngineer("Black Shepard");
 
         System.out.println(employee1.getName());
         System.out.println("$" + employee1.getBaseSalary());
@@ -42,8 +44,11 @@ public class CompanyStructure {
         System.out.println(employee2.toString());
         System.out.println(employee3.equals(employee4));
         System.out.println(employee5.toString());
-
-
-
+        System.out.println(employee1.employeeStatus());
+        System.out.println(employee6.employeeStatus());
+        System.out.println(employee7.employeeStatus());
+        System.out.println(((SoftwareEngineer) employee7).getCodeAccess());
+        ((SoftwareEngineer) employee7).setCodeAccess(true);
+        System.out.println(((SoftwareEngineer) employee7).getCodeAccess());
     }
 }
