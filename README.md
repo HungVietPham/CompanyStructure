@@ -4,9 +4,7 @@ For this project you are going to practice using inheritance, interfaces and abs
 
 Create an object ecosystem that includes each of the following classes:
 
-Employee
-
-Method header	Description
+Employee    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public Employee(String name, double baseSalary)	Should construct a new employee object and take in two parameters, one for the name of the user and one for their base salary
 
@@ -26,9 +24,7 @@ public String employeeStatus()	Should return a String representation of that Emp
 
 
 
-TechnicalEmployee
-
-Method Header	Description
+TechnicalEmployee    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public TechnicalEmployee(String name)	Has a default base salary of 75000
 
@@ -37,9 +33,7 @@ public String employeeStatus()	Should return a String representation of this Tec
 
 
 
-BusinessEmployee
-
-Method Header	Description
+BusinessEmployee    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public BusinessEmployee(String name)	Has a default salary of 50000
 
@@ -50,9 +44,7 @@ public String employeeStatus()	Should return a String representation of this Bus
 
 
 
-SoftwareEngineer
-
-Method Header	Description
+SoftwareEngineer    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public SoftwareEngineer(String name)	Should start without access to code and with 0 code check ins
 
@@ -67,9 +59,7 @@ public boolean checkInCode()	Should check if this SoftwareEngineer's manager app
 
 
 
-Accountant
-
-Method Header	Description
+Accountant    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public Accountant(String name)	Should start with a bonus budget of 0 and no team they are officially supporting
 
@@ -84,9 +74,7 @@ public String employeeStatus()	Should return a String representation of this Acc
 
 
 
-TechnicalLead
-
-Method Header	Description
+TechnicalLead    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public TechnicalLead(String name)	Should create a new TechnicalLead that is a Manager. The TechnicalLead's base salary should be 1.3 times that of a TechnicalEmployee. TechnicalLeads should have a default head count of 4.
 
@@ -103,9 +91,7 @@ public String getTeamStatus()	Should return a String that gives insight into thi
 
 
 
-BusinessLead
-
-Method Header	Description
+BusinessLead    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 public BusinessLead(String name)	Should create a new BusinessLead that is a Manager. The BusinessLead's base salary should be twice that of an Accountant. They should start with a head count of 10.
 
@@ -120,6 +106,7 @@ public boolean approveBonus(Employee e, double bonus)	This function should look 
 
 
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Here is my testing code that you can use to see if things are set up properly:
 
 Here is my testing code that you can use to see if things are set up properly:
