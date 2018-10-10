@@ -37,6 +37,7 @@ public class CompanyStructure {
         Employee employee5 = new TechnicalEmployee("Jen");
         Employee employee6 = new BusinessEmployee("Bandit");
         TechnicalEmployee employee7 = new SoftwareEngineer("Black Shepard");
+        TechnicalLead employee8 = new TechnicalLead("Bob");
 
         System.out.println(employee1.getName());
         System.out.println("$" + employee1.getBaseSalary());
@@ -50,5 +51,6 @@ public class CompanyStructure {
         System.out.println(((SoftwareEngineer) employee7).getCodeAccess());
         ((SoftwareEngineer) employee7).setCodeAccess(true);
         System.out.println(((SoftwareEngineer) employee7).getCodeAccess());
+        System.out.println(employee8.getBaseSalary());
     }
 }

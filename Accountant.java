@@ -10,35 +10,48 @@ package com.github.khardrix.companyStructure;
 
 public class Accountant extends BusinessEmployee{
 
-    private String teamSupported;
+    private TechnicalLead teamSupported;
     private double bonusBudget;
-    private TechnicalLead techLead;
 
 
     public Accountant(String name){
 
+        /*
+        Should start with a bonus budget of 0 and no team they are officially supporting
+         */
         super(name);
         teamSupported = null;
         bonusBudget = 0;
     }
 
 
-    public void assignTechLead(TechnicalLead techLead){
-
-        this.techLead = techLead;
-    }
-
-
     public TechnicalLead getTeamSupported(){
 
-        this.techLead = techLead;
-        return techLead;
+        /*
+        Should return a reference to the TechnicalLead that this Accountant is currently supporting.
+        If they have not been assigned a TechnicalLead null should be returned
+         */
+        if(teamSupported == null){
+            return null;
+        }else {
+            return teamSupported;
+        }
     }
 
     // NOT FINISHED!!!!!!!
     public void supportTeam(TechnicalLead lead){
 
-
+        /*
+        Should allow a reference to a TechnicalLead to be passed in and saved.
+        Once this happens the Accountant's bonus budget should be updated
+        to be the total of each SoftwareEngineer's base salary that reports to
+        that TechnicalLead plus 10%.
+        For example, if the TechnicalLead supports 2 SoftwareEngineers,
+        each with a salary of 75000, the Accountant's budget should be
+        150000 + 15000 for a total of 165000
+         */
+        this.teamSupported = lead;
+        // MORE CODE TO BE ADDED HERE!
     }
 
     // NOT FINISHED!!!!!!!
@@ -50,12 +63,27 @@ public class Accountant extends BusinessEmployee{
         If the accountant is not supporting any team false should be returned.
          */
 
-        return true;    // TEMPORARY!!!!!!! JUST TO GET RID OF ERRORS SO MORE CODE CAN BE WRITTEN!!!!!!!
+        // Is the line of code below the same as the if - else statements?
+        return ((bonus <= bonusBudget) && (teamSupported != null));
+
+        /*
+        if(bonus > bonusBudget || teamSupported == null){
+            return false;
+        }else{
+            return true;
+        }
+        */
     }
 
     // NOT FINISHED!!!!!!!!
     public String employeeStatus(){
 
+        /*
+        Should return a String representation of this Accountant that includes their
+        ID, name, the size of their currently managed budget and the name of the TechnicalLead
+        they are currently supporting.
+        Example: "1 Kasey with a budget of 22500.0 is supporting Satya Nadella"
+         */
         return super.employeeStatus() + " is supporting // THIS NAME WILL BE FILLED IN " +
                 "BY ANOTHER METHOD IN ANOTHER CLASS //";
     }
