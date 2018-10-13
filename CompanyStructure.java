@@ -1,5 +1,3 @@
-package com.github.khardrix.companyStructure;
-
 /*******************************************************************************************
  *******************************************************************************************
  *****                            *| Company Structure |*                              *****
@@ -30,27 +28,37 @@ public class CompanyStructure {
 
     public static void main(String[] args){
 
-        Employee employee1 = new TechnicalEmployee("Ryan");
-        Employee employee2 = new TechnicalEmployee("Carmen");
-        Employee employee3 = new TechnicalEmployee("Bella");
-        Employee employee4 = new TechnicalEmployee("Brandon");
-        Employee employee5 = new TechnicalEmployee("Jen");
-        Employee employee6 = new BusinessEmployee("Bandit");
-        TechnicalEmployee employee7 = new SoftwareEngineer("Black Shepard");
-        TechnicalLead employee8 = new TechnicalLead("Bob");
+    /*
+        THIS WAS WRITTEN IN THE INSTRUCTIONS AT THE END FOR SOME EXAMPLE OUTPUT AND SUCH:
 
-        System.out.println(employee1.getName());
-        System.out.println("$" + employee1.getBaseSalary());
-        System.out.println(employee1.equals(employee1));
-        System.out.println(employee2.toString());
-        System.out.println(employee3.equals(employee4));
-        System.out.println(employee5.toString());
-        System.out.println(employee1.employeeStatus());
-        System.out.println(employee6.employeeStatus());
-        System.out.println(employee7.employeeStatus());
-        System.out.println(((SoftwareEngineer) employee7).getCodeAccess());
-        ((SoftwareEngineer) employee7).setCodeAccess(true);
-        System.out.println(((SoftwareEngineer) employee7).getCodeAccess());
-        System.out.println(employee8.getBaseSalary());
+        Here is my testing code that you can use to see if things are set up properly:
+
+        TechnicalLead CTO = new TechnicalLead("Satya Nadella");
+        SoftwareEngineer seA = new SoftwareEngineer("Kasey");
+        SoftwareEngineer seB = new SoftwareEngineer("Breana");
+        SoftwareEngineer seC = new SoftwareEngineer("Eric");
+        CTO.addReport(seA);
+        CTO.addReport(seB);
+        CTO.addReport(seC);
+        System.out.println(CTO.getTeamStatus());
+
+        TechnicalLead VPofENG = new TechnicalLead("Bill Gates");
+        SoftwareEngineer seD = new SoftwareEngineer("Winter");
+        SoftwareEngineer seE = new SoftwareEngineer("Libby");
+        SoftwareEngineer seF = new SoftwareEngineer("Gizan");
+        SoftwareEngineer seG = new SoftwareEngineer("Zaynah");
+        VPofENG.addReport(seD);
+        VPofENG.addReport(seE);
+        VPofENG.addReport(seF);
+        VPofENG.addReport(seG);
+        System.out.println(VPofENG.getTeamStatus());
+
+        BusinessLead CFO = new BusinessLead("Amy Hood");
+        Accountant actA = new Accountant("Niky");
+        Accountant actB = new Accountant("Andrew");
+        CFO.addReport(actA, CTO);
+        CFO.addReport(actB, VPofENG);
+        System.out.println(CFO.getTeamStatus());
+     */
     }
 }

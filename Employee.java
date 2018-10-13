@@ -117,4 +117,15 @@ abstract class Employee{
 
         this.manager = manager;
     }
+
+
+    public void setBaseSalary(double salary){
+
+        /*
+            Added by me: So that an outside class can set
+            the double value of baseSalary.
+         */
+
+        this.baseSalary = salary;
+    }
 }
