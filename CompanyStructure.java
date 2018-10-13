@@ -1,3 +1,5 @@
+package com.github.khardrix.companyStructure;
+
 /*******************************************************************************************
  *******************************************************************************************
  *****                            *| Company Structure |*                              *****
@@ -20,27 +22,22 @@
  *******************************************************************************************
  ******************************************************************************************/
 
-//IMPORTS of needed tools and plug-ins.
-
-
 public class CompanyStructure {
 
-
-    public static void main(String[] args){
-
-    /*
-        THIS WAS WRITTEN IN THE INSTRUCTIONS AT THE END FOR SOME EXAMPLE OUTPUT AND SUCH:
-
-        Here is my testing code that you can use to see if things are set up properly:
-
+    public static void main(String[] args) {
         TechnicalLead CTO = new TechnicalLead("Satya Nadella");
         SoftwareEngineer seA = new SoftwareEngineer("Kasey");
+        seA.setCodeAccess(true);
         SoftwareEngineer seB = new SoftwareEngineer("Breana");
         SoftwareEngineer seC = new SoftwareEngineer("Eric");
         CTO.addReport(seA);
         CTO.addReport(seB);
         CTO.addReport(seC);
+        seC.setSuccessCheckIns(3);
+        System.out.println(seC.getCodeAccess());
+        System.out.println(seA.checkInCode());
         System.out.println(CTO.getTeamStatus());
+
 
         TechnicalLead VPofENG = new TechnicalLead("Bill Gates");
         SoftwareEngineer seD = new SoftwareEngineer("Winter");
@@ -56,9 +53,13 @@ public class CompanyStructure {
         BusinessLead CFO = new BusinessLead("Amy Hood");
         Accountant actA = new Accountant("Niky");
         Accountant actB = new Accountant("Andrew");
+        actB.supportTeam(VPofENG);
+        System.out.println(actB.approveBonus(330001));
         CFO.addReport(actA, CTO);
         CFO.addReport(actB, VPofENG);
+        System.out.println(CTO.requestBonus(actA, 247500));
         System.out.println(CFO.getTeamStatus());
-     */
+        System.out.println(CFO.approveBonus(VPofENG,100000));
+        System.out.println(CFO.getTeamStatus());
     }
 }

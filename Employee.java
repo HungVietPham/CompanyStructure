@@ -1,12 +1,12 @@
+package com.github.khardrix.companyStructure;
+
 /*******************************************************************************************
  *******************************************************************************************
  *****                                 *| Employee |*                                  *****
- *****---------------------------------------------------------------------------------*****
- *****                             Unfinished Methods: 0                               *****
  *******************************************************************************************
  ******************************************************************************************/
 
-abstract class Employee{
+public abstract class Employee {
 
     private String name;
     private double baseSalary;
@@ -15,117 +15,66 @@ abstract class Employee{
     private static int numberOfEmployees = 0;
 
 
-    public Employee(String name, double baseSalary){
-
-        /*
-            Should construct a new employee object and take in two parameters,
-            one for the name of the user and one for their base salary
-         */
-
+    public Employee(String name, double baseSalary) {
         this.name = name;
         this.baseSalary = baseSalary;
-        numberOfEmployees++;
-        employeeID = numberOfEmployees;
+        ++numberOfEmployees;
+        this.employeeID = numberOfEmployees;
     }
 
 
-    public double getBaseSalary(){
-
-        /*
-            Should return the employee's current salary
-         */
-
-        return baseSalary;
-    }
-
-
-    public String getName(){
-
-        /*
-            Should return the employee's current name
-         */
-
-        return name;
-    }
-
-
-    public int getEmployeeID(){
-
-        /*
-            Should return the employee's ID.
-            The ID should be issued on behalf of the employee
-            at the time they are constructed.
-            The first ever employee should have an ID of "1",
-            the second "2" and so on
-         */
-
+    public int getEmployeeID() {
         return employeeID;
     }
 
 
-    public Employee getManager(){
-
-        /*
-            Should return a reference to the Employee object
-            that represents this employee's manager
-         */
-
-        return manager;
+    public void setEmployeeID(int employessID) {
+        this.employeeID = employessID;
     }
 
 
-    public boolean equals(Employee other){
-
-        /*
-            Should return true if the two employee IDs are the same,
-            false otherwise
-         */
-
-        return (this.employeeID == other.employeeID);
+    public String getName() {
+        return this.name;
     }
 
 
-    public String toString(){
-
-        /*
-            Should return a String representation of the employee
-            that is a combination of their id
-            followed by their name. Example: "1 Kasey"
-         */
-
-        return employeeID + " " + name;
+    public void setName(String name) {
+        this.name = name;
     }
 
 
-    abstract String employeeStatus();
-    /*
-        Should return a String representation
-        of that Employee's current status.
-        This will be different for every subclass of Employee
-     */
-
-
-    ////////// METHODS ADDED BY ME. WOULD LIKE TO NOT ADD ANY METHODS, IF POSSIBLE //////////
-
-
-    public void setManager(Employee manager){
-
-        /*
-            Added by me: So that an outside class can set
-            the Employee value of manager.
-         */
-
-        this.manager = manager;
+    public double getBaseSalary() {
+        return this.baseSalary;
     }
 
 
-    public void setBaseSalary(double salary){
-
-        /*
-            Added by me: So that an outside class can set
-            the double value of baseSalary.
-         */
-
-        this.baseSalary = salary;
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
     }
+
+
+    public Employee getManager() {
+        return this.manager;
+    }
+
+
+    public Employee setManager(Employee emp) {
+        return this.manager = emp;
+    }
+
+
+    public boolean equals(Employee other) {
+        if (this.employeeID == other.getEmployeeID()) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public String toString() {
+        return this.employeeID + " " + this.name;
+    }
+
+
+    abstract public String employeeStatus();
 }

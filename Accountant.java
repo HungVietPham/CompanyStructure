@@ -1,108 +1,56 @@
-import java.util.ArrayList;
+package com.github.khardrix.companyStructure;
 
 /*******************************************************************************************
  *******************************************************************************************
  *****                                *| Accountant |*                                 *****
- *****---------------------------------------------------------------------------------*****
- *****                              Unfinished Methods: 5                              *****
- *****  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  *****
- *****                           public Accountant(String name)                        *****
- *****                  public void setTeamSupported(TechnicalLead lead)               *****
- *****                          public String employeeStatus()                         *****
- *****---------------------------------------------------------------------------------*****
- *****                            Questions on line(s);                                *****
- *****  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  *****
- *****                 22 - 23, 34, 36 - 37, 70 - 71, 73, 75 - 76, 106                 *****
  *******************************************************************************************
  ******************************************************************************************/
 
-public class Accountant extends BusinessEmployee{
+// IMPORTS of needed tools and plug-ins.
+import java.text.DecimalFormat;
 
-    private TechnicalLead teamSupported;                                   // DO I NEED?
-    private ArrayList<TechnicalLead> directReports = new ArrayList<>();    // DO I NEED?
+public class Accountant extends BusinessEmployee {
+
+    private TechnicalLead suppTeam;
 
 
-    public Accountant(String name){
-
-        /*
-            Should start with a bonus budget of 0
-            and no team they are officially supporting
-         */
-
+    public Accountant(String name) {
         super(name);
-        super.setBonusBudget(0);    // DO I NEED A DIFFERENT private double bonusBudget (from
-
-        teamSupported = null;    // DO I NEED TechnicalLead teamSupported OR ArrayList<TechnicalLead> directReports
-                                     // SHOULD I USE private Employee manager FROM Employee?
+        setBonusBudget(0);
+        this.suppTeam = null;
     }
 
 
-    public TechnicalLead getTeamSupported(){
-
-        /*
-            Should return a reference to the TechnicalLead
-            that this Accountant is currently supporting.
-            If they have not been assigned a TechnicalLead
-            null should be returned
-         */
-
-        if(teamSupported == null)
-            return null;
-        else
-            return teamSupported;
+    public TechnicalLead getTeamSupported() {
+        return this.suppTeam;
     }
 
 
-    public void setTeamSupported(TechnicalLead lead){
+    public void supportTeam(TechnicalLead lead) {
+        double sum = 0;
+        this.suppTeam = lead;
+        for (SoftwareEngineer eng : suppTeam.getDirectReport()) {
+            sum += eng.getBaseSalary();
+        }
 
-        /*
-            Should allow a reference to a TechnicalLead
-            to be passed in and saved. Once this happens
-            the Accountant's bonus budget should be updated
-            to be the total of each SoftwareEngineer's base salary
-            that reports to that TechnicalLead plus 10%.
-            For example, if the TechnicalLead supports 2 SoftwareEngineers,
-            each with a salary of 75000, the Accountant's budget
-            should be 150000 + 15000 for a total of 165000
-         */
-
-         teamSupported = lead;       // WHICH ONE? OR BOTH?
-         directReports.add(lead);    // WHICH ONE? OR BOTH?
-
-        // super.setManager(lead);     // IS THERE A WAY TO DO THIS?
-
-        super.setBonusBudget((directReports.size() * 75000) * 1.1);    // A WAY TO GET softwareEngineers baseSalary?
-    }                                                                      // baseSalary FROM Employee .
+        setBonusBudget(sum + sum * 0.10);
+    }
 
 
-    public boolean approveBonus(double bonus){
-
-        /*
-            Should take in a suggested bonus amount and check
-            if there is still enough room in the budget.
-            If the bonus is greater than the remaining budget,
-            false should be returned, otherwise true.
-            If the accountant is not supporting any team
-            false should be returned.
-         */
-
-        if((teamSupported == null) || (bonus > super.getBonusBudget()))
+    public boolean approveBonus(double bonus) {
+        if (bonus > getBonusBudget() || suppTeam == null) {
             return false;
-        else
-            return true;
+        }
+        return true;
     }
 
 
     public String employeeStatus(){
+        String budNum = String.valueOf(getBonusBudget());
+        String pattern = "#,###.00";
+        DecimalFormat myFormatter = new DecimalFormat(pattern);
+        budNum = myFormatter.format(Double.parseDouble(budNum));
 
-        /*
-            Should return a String representation of this Accountant
-            that includes their ID, name, the size of their
-            currently managed budget and the name of the TechnicalLead
-            they are currently supporting. Example:
-            "1 Kasey with a budget of 22500.0 is supporting Satya Nadella"
-         */
-
-        return super.employeeStatus() + " is supporting " + teamSupported;    // teamSupported OR directReports?
+        return this.getEmployeeID()  +  " "  + getName() + " with a budget of $" + budNum + " is supporting " + getTeamSupported();
     }
 }
